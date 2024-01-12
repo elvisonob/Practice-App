@@ -5,7 +5,11 @@ const Cart = (props) => {
     <div>
       <ul>
         {cart.map((item) => (
-          <li>{item.sku}</li>
+          <li>
+            <div>{item.title}</div>
+            <div>{item.price}</div>
+            <div>{item.sku}</div>
+          </li>
         ))}
       </ul>
     </div>

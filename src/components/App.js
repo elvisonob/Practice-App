@@ -17,16 +17,16 @@ const App = () => {
     fetchedItems();
   }, []);
 
-  const onAddToCart = (itemId) => {
-    setCart((prevItems) => {
-      return [itemId, ...prevItems];
+  const onAddToCartHandler = (product) => {
+    setCart((prevItem) => {
+      return [product, ...prevItem];
     });
   };
 
   return (
     <div>
       <Cart cart={cart} />
-      <ItemsDisplay onAddToCart={onAddToCart} items={items} />
+      <ItemsDisplay onAddToCart={onAddToCartHandler} items={items} />
     </div>
   );
 };

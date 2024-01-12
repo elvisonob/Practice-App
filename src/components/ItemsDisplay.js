@@ -10,7 +10,7 @@ const ItemsDisplay = (props) => {
             <img alt="images" src={item.image} />
             <div>{item.sku}</div>
             <div>{item.price}</div>
-            <button onAddToCart={() => onAddToCart(item)}>Add to Basket</button>
+            <button onClick={() => onAddToCart(item)}>Add to Basket</button>
           </li>
         ))}
       </ul>
