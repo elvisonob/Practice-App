@@ -18,8 +18,8 @@ const App = () => {
   }, []);
 
   const onAddToCartHandler = (product) => {
-    setCart((prevItems) => {
-      return [product, ...prevItems];
+    setCart((prevExistedItem) => {
+      return [product, ...prevExistedItem];
     });
   };
 
