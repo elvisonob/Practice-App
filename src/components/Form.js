@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 
 const reducerFn = (nameState, action) => {
-  if ({ type: 'onNameChange' }) {
+  if (action.type === 'onNameChange') {
     return { name: action.payload };
   }
 
@@ -9,14 +9,14 @@ const reducerFn = (nameState, action) => {
 };
 
 const reducerFn2 = (cityNameState, action) => {
-  if ({ type: 'onCityNameChange' }) {
+  if (action.type === 'onCityNameChange') {
     return { cityName: action.payload };
   }
 
   return cityNameState;
 };
 
-const Form = () => {
+const Form = (props) => {
   const [nameState, dispatchFn] = useReducer(reducerFn, { name: '' });
   const [cityNameState, dispatchFn2] = useReducer(reducerFn2, { cityName: '' });
 
@@ -30,9 +30,9 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(nameState.name, cityNameState.cityName);
-    dispatchFn({ payload: '' });
-    dispatchFn2({ payload: '' });
+    props.onAdd(nameState.name, cityNameState.cityName);
+    dispatchFn({ type: 'onNameChange', payload: '' });
+    dispatchFn2({ type: 'onCityNameChange', payload: '' });
   };
 
   return (
