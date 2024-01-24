@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import ContextTesting from '../store/context.js';
 
 const FormList = (props) => {
+  const Context = useContext(ContextTesting);
   const { informationList } = props;
 
   return (
     <div>
-      {informationList.map((info) => (
+      {Context.map((info) => (
         <div key={info.name}>
           <li>
             {info.name} {info.cityName}

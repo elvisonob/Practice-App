@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Form from './Form.js';
 import FormList from './FormList.js';
+import ContextTesting from '../store/context.js';
 
 const App = () => {
   const [informationList, setInformationList] = useState([]);
@@ -11,10 +12,10 @@ const App = () => {
     });
   };
   return (
-    <div>
+    <ContextTesting.Provider value={informationList}>
       <Form onAdd={onAdd} />
-      <FormList informationList={informationList} />
-    </div>
+      <FormList />
+    </ContextTesting.Provider>
   );
 };
 
