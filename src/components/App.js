@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Form from './Form.js';
 import FormList from './FormList.js';
-import ContextTesting from '../store/context.js';
+import { ContextTesting } from '../store/context.js';
 
 const App = () => {
   const [informationList, setInformationList] = useState([]);

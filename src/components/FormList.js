@@ -1,9 +1,8 @@
-import React, { useState, useContext } from 'react';
-import ContextTesting from '../store/context.js';
+import React, { useContext } from 'react';
+import { ContextTesting } from '../store/context.js';
 
 const FormList = (props) => {
   const Context = useContext(ContextTesting);
-  const { informationList } = props;
 
   return (
     <div>

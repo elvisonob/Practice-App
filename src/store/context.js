@@ -1,5 +1,3 @@
 import React from 'react';
 
-const ContextTesting = React.createContext({ cart: [] });
-
-export default ContextTesting;
+export const ContextTesting = React.createContext();
